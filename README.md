@@ -1,2 +1,2 @@
-# NPU-latex
+# NPU-LaTeX
 LaTeX Template for NPU
