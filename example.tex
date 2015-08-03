@@ -1,0 +1,75 @@
+\documentclass[a4paper,10pt,thaithesis,bachelor]{npu}
+\graphicspath{{./figure/}}
+
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+\usepackage[cmex10]{amsmath}    % math package provides several command and symbols
+                                % cmex10 option force only type 1 font to be used
+\interdisplaylinepenalty=2500   % amsmath set this value to 10000, if you want to adjust
+                                % this, do so after use the package
+\usepackage{algorithm}          % package for writing a pseudo code
+\usepackage{algorithmic}        % package for writing a pseudo code
+\usepackage{array}              % improvement to the tabular and array
+%\usepackage{mdwmath}           % other useful math package for formating equations
+%\usepackage{mdwtab}
+\usepackage{subfig}             % for placing subfigures in one figures environment
+
+\thesistitle{การใช้งาน \LaTeX ในวิทยานิพนธ์}
+\authortitle
+{Mr.}
+{Mr.}
+\thesisauthor
+{ทรงฤทธิ์ กิติศรีวรพันธุ์}
+{Songrit Kitisriworapan}
+
+\advisor                                               % set the advisor
+{ผู้ช่วยศาสตราจารย์ ดร.xxx xxxx}               % Advisor name in Thai
+{ผศ. ดร. xxx xxxx}                          % Advisor name in Thai with abbrev. title
+{Assistant Professor xxxx xxxx, Ph.D.}  % Advisor name in English
+{ASST. PROF. xxxx xxxxx, Ph.D.}          % Advisor name in English with abbrev. title 
+
+\faculty                                % set the faculty
+{เทคโนโลยีอุตสาหกรรม}                          % name of the faculty in Thai
+{Industrial Technology}                           % name of the faculty in English
+\department                             % set the department
+{วิศวกรรมคอมพิวเตอร์}                      % name of the department in Thai
+{Computer Engineering}                  % name of the department in English
+\fieldofstudy                           % set the field of study (าขิช)
+{วิศวกรรมคอมพิวเตอร์}                      % Field in Thai
+{Computer Engineering}                  % Field in English
+\degree                                 % set the degree name
+{วิศวกรรมศาสตรบัณฑิต}                   % Degree name in Thai
+{Bachelor of Engineering}                  % Degree name in English
+\academicyear{2558}                     % Academic Year (in Thai Calendar)
+\authorid{58xxxxxxx}                   % ID of the author
+\keywords{Wireless Sensor Network / Wireless Network
+}                                       % Keywords, for English abstract
+\deanname                               % name of the dean
+{รองศาสตราจารย์ ดร. xxxx xxxx}                       % in Thai
+{Associate Professor xxxx xxxx, Dr.Ing.}     % in English
+
+\committee                              % list of committee, please use \CommitteeBlock,\CommiteeBlockAdvisor,\CommitteBlockCoAdvisor
+{
+\CommitteeBlock{Chairman}{Professor xxxx xxxx, Ph.D.}          % chairman
+\CommitteeBlockAdvisor                  % pre-defined value for advisor
+\CommitteeBlockCoAdvisor                % pre-defined value for co-advisor
+\CommitteeBlock{Examiner}{Professor xxxx xxxx, Ph.D.}                % examiner
+\CommitteeBlock{Examiner}{Assistant Professor xxxx xxxx, Ph.D.}     % examiner
+\CommitteeBlock{External Examiner}{Associate Professor xxx xxxx, Ph.D.}  % examiner
+}
+
+\include{macros}
+
+\begin{document}
+\makethaicover
+\makeenglishcover
+\makecommittee
+
+% Table of Content
+\tableofcontents        % generate table of content
+\newpage
+\listoftables           % generate list of tables
+\newpage
+\listoffigures          % generate list of figures
+\normalem
+\end{document}

@@ -54,11 +54,9 @@
 %%  - Change heading mechanism.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Identification %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{chula}[2012/04/19]
+\ProvidesClass{npu}[2015/08/02]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Initial Code %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{calc}
@@ -74,16 +72,17 @@
 
 \setTransitionTo{Thai}{\fontspec{Garuda}}
 
-
 %\newfontfamily\thaifont[BoldFont={Garuda-Bold:script=thai},
 %                 ItalicFont={Garuda-Oblique:script=thai},
 %                 BoldItalicFont={Garuda-BoldOblique:script=thai}
 %                ]{Garuda:script=thai} 
-\setdefaultlanguage{english}
-\setotherlanguage{thai} 
+\setdefaultlanguage{thai}
+\setotherlanguage{english} 
 \XeTeXlinebreaklocale “th_TH” 
 
 \newif\if@doctor
+\newif\if@master
+\newif\if@bachelor
 \newif\if@coadvisor
 \newif\if@thaithesis
 \@coadvisorfalse
@@ -92,6 +91,8 @@
 \DeclareOption{doctor} {
   \@doctortrue
 } \DeclareOption{master} {
+  \@doctorfalse
+} \DeclareOption{bachelor} {
   \@doctorfalse
 } \DeclareOption{coadvisor} {
   \@coadvisortrue
@@ -133,8 +134,13 @@
   \newcommand{\@ThaiDegreeType}{ปริญญาดุษฎีบัณฑิต}
   \newcommand{\@EnglishDegreeType}{Doctoral Degree}
 \else
-  \newcommand{\@ThaiDegreeType}{ปริญญามหาบัณฑิต}
-  \newcommand{\@EnglishDegreeType}{Master's Degree}
+\if@master
+    \newcommand{\@ThaiDegreeType}{ปริญญามหาบัณฑิต}
+    \newcommand{\@EnglishDegreeType}{Master's Degree}
+  \else
+    \newcommand{\@ThaiDegreeType}{ปริญญาบัณฑิต}
+    \newcommand{\@EnglishDegreeType}{Bachelor's Degree}
+  \fi
 \fi
 
 \if@thaithesis
